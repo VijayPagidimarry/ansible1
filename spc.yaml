@@ -1,0 +1,11 @@
+---
+ - name: deploy it as linux server
+   hosts: app server
+   become: yes
+   tasks:
+    - name: update and install openjdk
+      apt: 
+        name: openjdk-11-jdk
+        update_cache: yes
+        state: present
+      
